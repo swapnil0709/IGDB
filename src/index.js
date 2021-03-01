@@ -7,6 +7,8 @@ import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 
 import rootReducer from "./reducers";
+// REACT ROUTER
+import { BrowserRouter } from "react-router-dom";
 
 // CONNECTING REDUX WITH REACT
 import { Provider } from "react-redux";
@@ -19,7 +21,9 @@ const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk)));
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

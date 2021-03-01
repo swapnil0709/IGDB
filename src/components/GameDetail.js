@@ -4,38 +4,42 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 
 export default function GameDetail() {
-  const { game, screen } = useSelector((state) => state.detail);
+  const { game, screen, isLoading } = useSelector((state) => state.detail);
 
   return (
-    <StyledCardShadow>
-      <StyledDetail>
-        <StyledStats>
-          <div className="rating">
-            <h3>{game.name}</h3>
-            <p>Rating: {game.rating}</p>
-          </div>
-          <StyledInfo>
-            <h3>Platforms</h3>
-            <StyledPlatforms>
-              {game.platforms.map((data) => (
-                <h3 key={data.platform.id}>{data.platform.name}</h3>
+    <>
+      {!isLoading && (
+        <StyledCardShadow>
+          <StyledDetail>
+            <StyledStats>
+              <div className="rating">
+                <h3>{game.name}</h3>
+                <p>Rating: {game.rating}</p>
+              </div>
+              <StyledInfo>
+                <h3>Platforms</h3>
+                <StyledPlatforms>
+                  {game.platforms.map((data) => (
+                    <h3 key={data.platform.id}>{data.platform.name}</h3>
+                  ))}
+                </StyledPlatforms>
+              </StyledInfo>
+            </StyledStats>
+            <StyledMedia>
+              <img src={game.background_image} alt={game.name} />
+            </StyledMedia>
+            <StyledDescription>
+              <p>{game.description_raw}</p>
+            </StyledDescription>
+            <div className="gallery">
+              {screen.results.map((screen) => (
+                <img src={screen.image} alt="Screenshots" key={screen.id} />
               ))}
-            </StyledPlatforms>
-          </StyledInfo>
-        </StyledStats>
-        <StyledMedia>
-          <img src={game.background_image} alt={game.name} />
-        </StyledMedia>
-        <StyledDescription>
-          <p>{game.description_raw}</p>
-        </StyledDescription>
-        <div className="gallery">
-          {screen.results.map((screen) => (
-            <img src={screen.image} alt="Screenshots" key={screen.id} />
-          ))}
-        </div>
-      </StyledDetail>
-    </StyledCardShadow>
+            </div>
+          </StyledDetail>
+        </StyledCardShadow>
+      )}
+    </>
   );
 }
 
@@ -67,6 +71,7 @@ const StyledDetail = styled(motion.div)`
   position: absolute;
   left: 10%;
   color: black;
+
   img {
     width: 100%;
   }
