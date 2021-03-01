@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { smallImage } from "../util";
+
 export default function GameDetail() {
   const { game, screen, isLoading } = useSelector((state) => state.detail);
   const history = useHistory();
