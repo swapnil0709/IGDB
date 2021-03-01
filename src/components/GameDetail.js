@@ -9,26 +9,26 @@ export default function GameDetail() {
   return (
     <StyledCardShadow>
       <StyledDetail>
-        <div className="stats">
+        <StyledStats>
           <div className="rating">
             <h3>{game.name}</h3>
             <p>Rating: {game.rating}</p>
           </div>
-          <div className="info">
+          <StyledInfo>
             <h3>Platforms</h3>
-            <div className="platforms">
+            <StyledPlatforms>
               {game.platforms.map((data) => (
                 <h3 key={data.platform.id}>{data.platform.name}</h3>
               ))}
-            </div>
-          </div>
-        </div>
-        <div className="media">
+            </StyledPlatforms>
+          </StyledInfo>
+        </StyledStats>
+        <StyledMedia>
           <img src={game.background_image} alt={game.name} />
-        </div>
-        <div className="description">
+        </StyledMedia>
+        <StyledDescription>
           <p>{game.description_raw}</p>
-        </div>
+        </StyledDescription>
         <div className="gallery">
           {screen.results.map((screen) => (
             <img src={screen.image} alt="Screenshots" key={screen.id} />
@@ -47,9 +47,7 @@ const StyledCardShadow = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
-  img {
-    width: 100%;
-  }
+
   &::-webkit-scrollbar {
     width: 0.5rem;
   }
@@ -64,9 +62,44 @@ const StyledCardShadow = styled(motion.div)`
 const StyledDetail = styled(motion.div)`
   width: 80%;
   border-radius: 1rem;
-  padding: 2rem 20rem;
+  padding: 2rem 5rem;
   background: white;
   position: absolute;
   left: 10%;
   color: black;
+  img {
+    width: 100%;
+  }
 `;
+
+const StyledStats = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const StyledInfo = styled(motion.div)`
+  text-align: center;
+`;
+
+const StyledPlatforms = styled(motion.div)`
+  display: flex;
+  justify-content: space-evenly;
+  img {
+    margin-left: 3rem;
+  }
+`;
+
+const StyledMedia = styled(motion.div)`
+  margin-top: 5rem;
+  img {
+    width: 100%;
+  }
+`;
+
+const StyledDescription = styled(motion.div)`
+  margin: 4rem 0rem;
+`;
+
+// const StyledDescription = styled(motion.div)``;
+// const StyledDescription = styled(motion.div)``;
