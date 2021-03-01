@@ -9,6 +9,7 @@ const Game = ({ name, image, released, id }) => {
   const dispatch = useDispatch();
 
   const loadDetailHandler = () => {
+    document.body.style.overflow = "hidden";
     dispatch(loadDetail(id));
   };
   return (
