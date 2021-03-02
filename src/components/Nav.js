@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import logo from "../img/logo.svg";
 import { fetchSearch } from "../actions/gamesAction";
+import { fadeIn } from "../animation";
 import { useDispatch } from "react-redux";
 export default function Nav() {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ export default function Nav() {
     dispatch({ type: "CLEAR_SEARCHED" });
   };
   return (
-    <StyledNav>
+    <StyledNav variants={fadeIn} initial="hidden" animate="show">
       <StyledLogo onClick={clearSearched}>
         <img src={logo} alt="logo" />
         <h1>IGDB</h1>
