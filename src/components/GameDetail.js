@@ -117,7 +117,7 @@ const StyledCardShadow = styled(motion.div)`
   top: 0;
   left: 0;
   z-index: 5;
-
+  scrollbar-color: #ec2f4b transparent;
   &::-webkit-scrollbar {
     width: 0.5rem;
   }

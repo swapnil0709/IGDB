@@ -5,6 +5,7 @@ import logo from "../img/Vector.svg";
 import { fetchSearch } from "../actions/gamesAction";
 import { fadeIn } from "../animation";
 import { useDispatch } from "react-redux";
+
 export default function Nav() {
   const dispatch = useDispatch();
   const [textInput, setTextInput] = useState("");
@@ -21,6 +22,11 @@ export default function Nav() {
   const clearSearched = () => {
     dispatch({ type: "CLEAR_SEARCHED" });
   };
+
+  // const themeHandler = () = {
+
+  // }
+
   return (
     <StyledNav variants={fadeIn} initial="hidden" animate="show">
       <StyledLogo onClick={clearSearched}>
@@ -31,7 +37,7 @@ export default function Nav() {
       </StyledLogo>
       <form className="search">
         <input onChange={inputHandler} value={textInput} type="text" />
-        <button type="submit" onClick={submitSearch}>
+        <button className="search-btn" type="submit" onClick={submitSearch}>
           Search
         </button>
       </form>
@@ -44,7 +50,7 @@ const StyledNav = styled(motion.div)`
   text-align: center;
 
   input {
-    height: 2.5rem;
+    height: 2.8rem;
     outline: none;
     width: 30%;
     font-size: 1.5rem;
@@ -52,7 +58,7 @@ const StyledNav = styled(motion.div)`
 
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
   }
-  button {
+  .search-btn {
     font-size: 1.5rem;
     border: none;
     padding: 0.5rem 2rem;
@@ -68,6 +74,7 @@ const StyledNav = styled(motion.div)`
       background: linear-gradient(to left, #a01b2f, #0c659c);
     }
   }
+
   .first {
     color: #bd2d14;
   }
@@ -84,5 +91,6 @@ const StyledLogo = styled(motion.div)`
   img {
     height: 2rem;
     width: 2rem;
+    pointer-events: none;
   }
 `;

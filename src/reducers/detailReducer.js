@@ -1,5 +1,3 @@
-import { Switch } from "react-router-dom";
-
 const initialState = {
   game: { platforms: [] },
   screen: { results: [] },

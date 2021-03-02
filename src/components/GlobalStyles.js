@@ -5,6 +5,8 @@ const GlobalStyles = createGlobalStyle`
      margin:0;
      padding:0;
      box-sizing:border-box;
+     scrollbar-width: thin;
+    scrollbar-color: #009fff transparent;
  }
  html{
      &::-webkit-scrollbar{
@@ -14,10 +16,12 @@ const GlobalStyles = createGlobalStyle`
         background: #009fff;
     
      }
+     
  }
  body{
      font-family:"Montserrat",sans-serif;
      width:100%;
+     
  }
  h2{
      font-size:3rem;
