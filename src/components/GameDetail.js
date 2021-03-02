@@ -118,6 +118,7 @@ const StyledCardShadow = styled(motion.div)`
   left: 0;
   z-index: 5;
   scrollbar-color: #ec2f4b transparent;
+
   &::-webkit-scrollbar {
     width: 0.5rem;
   }
@@ -126,6 +127,12 @@ const StyledCardShadow = styled(motion.div)`
   }
   &::-webkit-scrollbar-track {
     background: white;
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 540px) {
+    width: 100%;
   }
 `;
 
@@ -142,12 +149,31 @@ const StyledDetail = styled(motion.div)`
   img {
     width: 100%;
   }
+  @media screen and (max-width: 540px) {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    left: 10%;
+    img {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 80%;
+  }
 `;
 
 const StyledStats = styled(motion.div)`
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
+  @media screen and (max-width: 540px) {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
   img {
     height: 2rem;
     width: 2rem;
@@ -176,6 +202,9 @@ const StyledMedia = styled(motion.div)`
 
 const StyledDescription = styled(motion.div)`
   margin: 4rem 0rem;
+  @media screen and (max-width: 540px) {
+    margin: 1rem 0rem;
+  }
 `;
 
 export default GameDetail;

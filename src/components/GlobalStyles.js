@@ -47,6 +47,21 @@ const GlobalStyles = createGlobalStyle`
      font-weight:bold;
      font-family:"Montserrat",sans-serif;
  }
+ @media screen and (max-width: 540px){
+    h2{
+     font-size:1.5rem;
+     
+ }
+ h3{
+     font-size:1rem;
+     
+     padding:0.5rem 0rem;
+ }p{
+     font-size:0.7rem;
+     
+ }
+ }
+
 `;
 
 export default GlobalStyles;

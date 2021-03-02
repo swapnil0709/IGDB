@@ -28,7 +28,12 @@ export default function Nav() {
   // }
 
   return (
-    <StyledNav variants={fadeIn} initial="hidden" animate="show">
+    <StyledNav
+      variants={fadeIn}
+      initial="hidden"
+      animate="show"
+      className="nav"
+    >
       <StyledLogo onClick={clearSearched}>
         <img src={logo} alt="logo" />
         <h1>
@@ -46,18 +51,34 @@ export default function Nav() {
 }
 
 const StyledNav = styled(motion.div)`
-  padding: 3rem 5rem;
-  text-align: center;
+  
+  
+    padding: 3rem 5rem;
+    text-align: center;
+    @media screen and (max-width: 540px) {
+  padding:0;
+  margin:1rem;
+  input {
+    width: 100%;
+    }
+    .search-btn{
+    width:100%;
+  }
+  
+  }
+  
 
   input {
     height: 2.8rem;
     outline: none;
-    width: 30%;
+    width: 40%;
     font-size: 1.5rem;
     border: none;
 
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
   }
+  
+}
   .search-btn {
     font-size: 1.5rem;
     border: none;
@@ -81,6 +102,17 @@ const StyledNav = styled(motion.div)`
   .last {
     color: #116091;
   }
+  @media screen and (max-width: 768px) {
+
+   
+  input {
+    width: 100%;
+  }
+  .search-btn{
+    margin-top:1rem;
+  }
+
+
 `;
 const StyledLogo = styled(motion.div)`
   display: flex;
