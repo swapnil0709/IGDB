@@ -11,7 +11,8 @@ const GlobalStyles = createGlobalStyle`
          width:0.5rem;
      }
      &::-webkit-scrollbar-thumb{
-         background:darkgray;
+        background: #009fff;
+    
      }
  }
  body{
