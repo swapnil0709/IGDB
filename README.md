@@ -6,7 +6,11 @@
 ![Search](https://github.com/swapnil0709/IGDB/blob/master/Website%20Screenshots/IGDB%20Search%20page.png)
 ![game](https://github.com/swapnil0709/IGDB/blob/master/Website%20Screenshots/IGDB%20game%20screen.png)
 
+### Created using:
+React, Redux, Styled Components & Framer motion.
 
+### Credits:
+Rawg Api
 
 
 
