@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 export default function Nav() {
   const dispatch = useDispatch();
   const [textInput, setTextInput] = useState("");
+  // const [search, setSearch] = useState([]);
   const inputHandler = (e) => {
     setTextInput(e.target.value);
   };
@@ -23,9 +24,19 @@ export default function Nav() {
     dispatch({ type: "CLEAR_SEARCHED" });
   };
 
-  // const themeHandler = () = {
-
-  // }
+  // const debounce = (func) => {
+  //   let timerId;
+  //   return function (...args) {
+  //     const context = this;
+  //     if (timerId) {
+  //       clearTimeout(timerId);
+  //     }
+  //     timerId = setTimeout(() => {
+  //       timerId = null;
+  //       func.apply(context, args);
+  //     }, 500);
+  //   };
+  // };
 
   return (
     <StyledNav
@@ -45,6 +56,15 @@ export default function Nav() {
         <button className="search-btn" type="submit" onClick={submitSearch}>
           Search
         </button>
+        {/* {search.length > 0 && (
+          <div className="searchContainer">
+            {search.map((e, idx) => {
+              <div key={idx}>
+                <span>{}</span>
+              </div>;
+            })}
+          </div>
+        )} */}
       </form>
     </StyledNav>
   );
